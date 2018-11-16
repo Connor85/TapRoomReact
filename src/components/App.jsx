@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Splash from "./Splash";
 import BeerList from "./BeerList";
 import NewBeerForm from "./NewBeerForm";
+import Error404 from "./Error404";
 
 function App() {
   var styles = {};
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={Splash} />
         <Route exact path="/beerlist" component={BeerList} />
         <Route exact path="/newbeer" component={NewBeerForm} />
+        <Route component={Error404} />
       </Switch>
     </div>
   );

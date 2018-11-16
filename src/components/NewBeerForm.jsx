@@ -7,7 +7,7 @@ function NewBeerForm() {
         h1 {
           text-align: center;
           margin-top: 20px;
-          margin-bottom: 20px;
+          margin-bottom: 40px;
         }
 
         input,
@@ -17,6 +17,15 @@ function NewBeerForm() {
           margin-left: 100px;
           width: 200px;
           height: 30px;
+          border-radius: 5px;
+        }
+
+        button {
+          border-radius: 5px;
+          width: 70px;
+          height: 30px;
+          background-color: #f08080;
+          margin-left: 100px;
         }
       `}</style>
       <div>
