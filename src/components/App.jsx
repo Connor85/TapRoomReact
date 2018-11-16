@@ -1,24 +1,25 @@
-import React from 'react';
+import React from "react";
 //import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from "react-router-dom";
+import Splash from "./Splash";
+import BeerList from "./BeerList";
 
 /*
   import { Link } from 'react-router-dom';
   <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
 */
 
-function App(){
-  var styles = {
-  };
+function App() {
+  var styles = {};
   return (
     <div style={styles}>
       <style jsx>{`
         font-family: Helvetica;
       `}</style>
-      ReactTapRoom
-      {/* <Switch>
-        <Route exact path='/' component={} />
-      </Switch> */}
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Route exact path="/beerlist" component={BeerList} />
+      </Switch>
     </div>
   );
 }
