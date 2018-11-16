@@ -4,8 +4,22 @@ import { Link } from "react-router-dom";
 
 function Beer(props) {
   return (
-    <div>
-      <h3>{props.name}</h3>
+    <div class="row">
+      <style jsx>{`
+        .row {
+          margin: 40px auto;
+        }
+        td {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      `}</style>
+      <tr>
+        <td>{props.name}</td>
+        <td>{props.brewer}</td>
+        <td>{props.abv}</td>
+        <td>${props.price}</td>
+      </tr>
     </div>
   );
 }

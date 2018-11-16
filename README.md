@@ -19,7 +19,7 @@ _This React application is a rebuild of a fictional tap room. Users can view a l
 - Open file in your terminal
 - Clone the repository
 - Navigate to the file in your terminal and enter \$ NPM Install
-- Run `npm run start` for a dev server. Navigate to `http://localhost:8080`. The app will automatically reload if you change any of the source files.
+- Run `npm run start` for a dev server. The app will automatically reload if you change any of the source files.
 
 ## Known Bugs
 
