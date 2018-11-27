@@ -5,6 +5,7 @@ import Splash from "./Splash";
 import BeerList from "./BeerList";
 import NewBeerForm from "./NewBeerForm";
 import Error404 from "./Error404";
+import Navigation from "./Navigation";
 
 function App() {
   var styles = {};
@@ -14,6 +15,7 @@ function App() {
       <style jsx>{`
         font-family: Helvetica;
       `}</style>
+      <Navigation />
 
       <Switch>
         <Route exact path="/" component={Splash} />

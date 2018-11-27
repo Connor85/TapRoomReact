@@ -76,7 +76,6 @@ function BeerList() {
         }
       `}</style>
       <div class="container">
-        <Navigation />
         <h1>Beer's on Tap</h1>
         <table className="table table-striped">
           <thead className="thead-dark">

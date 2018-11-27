@@ -15,6 +15,7 @@ function Navigation() {
 
         li {
           float: left;
+          margin-right: 20px;
         }
 
         ul:first-child {
@@ -25,9 +26,8 @@ function Navigation() {
           text-decoration: none;
         }
 
-        /* Change the link color to #111 (black) on hover */
-        li a:hover {
-          background-color: #111;
+        li:hover {
+          text-color: yellow;
         }
       `}</style>
       <ul>
