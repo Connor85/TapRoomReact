@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Beer from "./Beer";
+import Navigation from "./Navigation";
 
 const masterKegList = [
   {
@@ -58,6 +59,7 @@ function BeerList() {
     <div>
       <style jsx>{`
         h1 {
+          margin-top: 20px;
           font-weight: bold;
           font-size: 50px;
           text-align: center;
@@ -74,9 +76,10 @@ function BeerList() {
         }
       `}</style>
       <div class="container">
+        <Navigation />
         <h1>Beer's on Tap</h1>
-        <table class="table table-striped">
-          <thead class="thead-dark">
+        <table className="table table-striped">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">Name</th>
               <th scope="col">brewer</th>
@@ -84,21 +87,20 @@ function BeerList() {
               <th scope="col">price</th>
             </tr>
           </thead>
-          <tbody />
+          <tbody>
+            {masterKegList.map((keg, index) => (
+              <Beer
+                name={keg.name}
+                brewer={keg.brewer}
+                description={keg.description}
+                abv={keg.abv}
+                price={keg.price}
+                remaining={keg.remaining}
+                key={index}
+              />
+            ))}
+          </tbody>
         </table>
-        {masterKegList.map((keg, index) => (
-          <div>
-            <Beer
-              name={keg.name}
-              brewer={keg.brewer}
-              description={keg.description}
-              abv={keg.abv}
-              price={keg.price}
-              remaining={keg.remaining}
-              key={index}
-            />
-          </div>
-        ))}
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ function App() {
       <style jsx>{`
         font-family: Helvetica;
       `}</style>
+
       <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/beerlist" component={BeerList} />

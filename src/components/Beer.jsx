@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Beer(props) {
   return (
-    <div class="row">
+    <tr class="row">
       <style jsx>{`
         .row {
           margin: 40px auto;
@@ -14,13 +14,11 @@ function Beer(props) {
           font-weight: bold;
         }
       `}</style>
-      <tr>
-        <td>{props.name}</td>
-        <td>{props.brewer}</td>
-        <td>{props.abv}</td>
-        <td>${props.price}</td>
-      </tr>
-    </div>
+      <td>{props.name}</td>
+      <td>{props.brewer}</td>
+      <td>{props.abv}</td>
+      <td>${props.price}</td>
+    </tr>
   );
 }
 

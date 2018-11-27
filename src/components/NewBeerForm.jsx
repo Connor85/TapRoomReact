@@ -29,6 +29,7 @@ function NewBeerForm() {
         }
       `}</style>
       <div>
+        <Navigation />
         <h1>Add a New Beer</h1>
         <form>
           <input type="text" id="name" placeholder="Names" />
