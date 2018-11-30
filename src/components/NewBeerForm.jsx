@@ -8,7 +8,6 @@ function NewBeerForm(props) {
   let _description = null;
   let _abv = null;
   let _price = null;
-  // let _remaining = null;
 
   function handleNewBeerFormSubmission(event) {
     event.preventDefault();
@@ -18,7 +17,8 @@ function NewBeerForm(props) {
       description: _description.value,
       abv: _abv.value,
       price: _price.value,
-      remaining: 124
+      remaining: 124,
+      id: v4()
     });
     _name.value = "";
     _brewer.value = "";

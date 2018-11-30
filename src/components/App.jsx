@@ -63,11 +63,19 @@ class App extends React.Component {
       ]
     };
     this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
+    this.handleSellingABeer = this.handleSellingABeer.bind(this);
   }
 
   handleAddingNewBeerToList(newTicket) {
-    var newMasterKegList = this.state.masterKegList.slice();
+    let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newTicket);
+    this.setState({ masterKegList: newMasterKegList });
+  }
+
+  handleSellingABeer(beer) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    let beerIndex = this.state.masterKegList.indexOf(beer);
+    newMasterKegList[beerIndex].remaining++;
     this.setState({ masterKegList: newMasterKegList });
   }
 
@@ -84,7 +92,12 @@ class App extends React.Component {
           <Route
             exact
             path="/"
-            render={() => <BeerList beerList={this.state.masterKegList} />}
+            render={() => (
+              <BeerList
+                sellPint={this.handleSellingABeer}
+                beerList={this.state.masterKegList}
+              />
+            )}
           />
 
           <Route

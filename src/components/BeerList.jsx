@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import Beer from "./Beer";
 
 function BeerList(props) {
+  console.log(props.beerList);
+
   return (
     <div>
       <style jsx>{`
@@ -45,6 +47,7 @@ function BeerList(props) {
                 price={keg.price}
                 remaining={keg.remaining}
                 key={index}
+                onSellingBeer={() => this.handleDownVoteClick(beer)}
               />
             ))}
           </tbody>
