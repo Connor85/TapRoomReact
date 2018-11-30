@@ -47,7 +47,8 @@ function BeerList(props) {
                 price={keg.price}
                 remaining={keg.remaining}
                 key={index}
-                onSellingBeer={() => this.handleDownVoteClick(beer)}
+                index={index}
+                onSellingBeer={props.sellPint}
               />
             ))}
           </tbody>

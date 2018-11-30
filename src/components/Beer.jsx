@@ -1,9 +1,9 @@
 import React from "react";
 
 function Beer(props) {
-  // function handleDownVoteClick() {
-  //   props.onSellingBeer(props.beer);
-  // }
+  function handleDownVoteClick() {
+    props.onSellingBeer(props.index);
+  }
   return (
     <tr class="row">
       <style jsx>{`
@@ -21,7 +21,7 @@ function Beer(props) {
       <td>${props.price}</td>
       <td>
         {props.remaining}
-        <button onClick={props.onSellingBeer}>Sell Pint</button>
+        <button onClick={handleDownVoteClick}>Sell Pint</button>
       </td>
     </tr>
   );

@@ -72,11 +72,16 @@ class App extends React.Component {
     this.setState({ masterKegList: newMasterKegList });
   }
 
-  handleSellingABeer(beer) {
+  handleSellingABeer(index) {
     let newMasterKegList = this.state.masterKegList.slice();
-    let beerIndex = this.state.masterKegList.indexOf(beer);
-    newMasterKegList[beerIndex].remaining++;
-    this.setState({ masterKegList: newMasterKegList });
+    let foundBeer = this.state.masterKegList[index];
+    if (foundBeer.remaining > 0) {
+      foundBeer.remaining--;
+      newMasterKegList[index] = foundBeer;
+      this.setState({ masterKegList: newMasterKegList });
+    } else {
+      foundBeer.remaining;
+    }
   }
 
   render() {
