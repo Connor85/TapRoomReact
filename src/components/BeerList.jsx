@@ -32,6 +32,7 @@ function BeerList(props) {
               <th scope="col">brewer</th>
               <th scope="col">abv</th>
               <th scope="col">price</th>
+              <th scope="col">Pints Left</th>
             </tr>
           </thead>
           <tbody>

@@ -17,15 +17,14 @@ function NewBeerForm(props) {
       brewer: _brewer.value,
       description: _description.value,
       abv: _abv.value,
-      price: _price.value
-      // remaining: _remaining.value
+      price: _price.value,
+      remaining: 124
     });
     _name.value = "";
     _brewer.value = "";
     _description.value = "";
     _abv.value = "";
     _price.value = "";
-    // _remainig.value = "";
   }
 
   return (
