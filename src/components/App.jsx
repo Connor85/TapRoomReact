@@ -64,12 +64,19 @@ class App extends React.Component {
     };
     this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
     this.handleSellingABeer = this.handleSellingABeer.bind(this);
+    this.handleDeletingBeer = this.handleDeletingBeer.bind(this);
   }
 
   handleAddingNewBeerToList(newTicket) {
     let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newTicket);
     this.setState({ masterKegList: newMasterKegList });
+  }
+
+  handleEditingABeer(index) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    let foundBeer = this.state.masterKegList[index];
+
   }
 
   handleSellingABeer(index) {
@@ -82,6 +89,12 @@ class App extends React.Component {
     } else {
       foundBeer.remaining;
     }
+  }
+
+  handleDeletingBeer(index) {
+    var newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.splice(index, 1);
+    this.setState({ masterKegList: newMasterKegList });
   }
 
   render() {
@@ -99,6 +112,7 @@ class App extends React.Component {
             path="/"
             render={() => (
               <BeerList
+                deleteBeer={this.handleDeletingBeer}
                 sellPint={this.handleSellingABeer}
                 beerList={this.state.masterKegList}
               />

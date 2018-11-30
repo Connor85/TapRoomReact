@@ -35,9 +35,6 @@ function Navigation() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/beerlist">Beer List</Link>
-        </li>
-        <li>
           <Link to="/newbeer">Add a Beer</Link>
         </li>
       </ul>

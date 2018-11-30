@@ -38,19 +38,22 @@ function BeerList(props) {
             </tr>
           </thead>
           <tbody>
-            {props.beerList.map((keg, index) => (
-              <Beer
-                name={keg.name}
-                brewer={keg.brewer}
-                description={keg.description}
-                abv={keg.abv}
-                price={keg.price}
-                remaining={keg.remaining}
-                key={index}
-                index={index}
-                onSellingBeer={props.sellPint}
-              />
-            ))}
+            {props.beerList
+              .sort((a, b) => b.price - a.price)
+              .map((keg, index) => (
+                <Beer
+                  name={keg.name}
+                  brewer={keg.brewer}
+                  description={keg.description}
+                  abv={keg.abv}
+                  price={keg.price}
+                  remaining={keg.remaining}
+                  key={index}
+                  index={index}
+                  onSellingBeer={props.sellPint}
+                  onDeletingBeer={props.deleteBeer}
+                />
+              ))}
           </tbody>
         </table>
       </div>
