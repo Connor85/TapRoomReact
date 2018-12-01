@@ -17,6 +17,7 @@ function BeerList(props) {
           font-weight: bold;
           padding-right: 40px;
           padding-left: 40px;
+          text-align: center;
         }
         table {
           margin: 40px auto;
