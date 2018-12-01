@@ -19,6 +19,7 @@ function Beer(props) {
         td {
           font-size: 20px;
           font-weight: bold;
+          text-align: center;
         }
 
         button {
@@ -29,8 +30,8 @@ function Beer(props) {
       <td>{props.brewer}</td>
       <td>{props.abv}</td>
       <td>${props.price}</td>
+      <td>{props.remaining}</td>
       <td>
-        {props.remaining}
         <button className="btn btn-success" onClick={handleSellingBeer}>
           Sell Pint
         </button>
