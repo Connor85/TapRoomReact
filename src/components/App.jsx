@@ -6,11 +6,15 @@ import BeerList from "./BeerList";
 import NewBeerForm from "./NewBeerForm";
 import Error404 from "./Error404";
 import Navigation from "./Navigation";
+import EditBeer from "./EditBeer";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentlyEditingBeer: null,
+      currrentlyEditingIndex: null,
+      currentlyEditingStatus: false,
       masterKegList: [
         {
           name: "Ruby Zozzle",
@@ -65,6 +69,10 @@ class App extends React.Component {
     this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
     this.handleSellingABeer = this.handleSellingABeer.bind(this);
     this.handleDeletingBeer = this.handleDeletingBeer.bind(this);
+    this.handleEditingABeer = this.handleEditingABeer.bind(this);
+    this.handleFinishEditingBeer = this.handleFinishEditingBeer.bind(this);
+
+    this.editFormView = null;
   }
 
   handleAddingNewBeerToList(newTicket) {
@@ -74,9 +82,23 @@ class App extends React.Component {
   }
 
   handleEditingABeer(index) {
-    let newMasterKegList = this.state.masterKegList.slice();
     let foundBeer = this.state.masterKegList[index];
+    this.setState({
+      currentlyEditingBeer: foundBeer,
+      currentlyEditingStatus: true,
+      currrentlyEditingIndex: index
+    });
+  }
 
+  handleFinishEditingBeer(editedBeer) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList[this.state.currrentlyEditingIndex] = editedBeer;
+    this.setState({
+      masterKegList: newMasterKegList,
+      currentlyEditingStatus: false,
+      currentlyEditingBeer: null,
+      currrentlyEditingIndex: null
+    });
   }
 
   handleSellingABeer(index) {
@@ -98,6 +120,17 @@ class App extends React.Component {
   }
 
   render() {
+    if (this.state.currentlyEditingStatus) {
+      this.editFormView = (
+        <EditBeer
+          handleFinishEditingBeer={this.handleFinishEditingBeer}
+          keg={this.state.currentlyEditingBeer}
+        />
+      );
+    } else {
+      this.editFormView = null;
+    }
+
     return (
       <div>
         <style jsx>{`
@@ -115,6 +148,7 @@ class App extends React.Component {
                 deleteBeer={this.handleDeletingBeer}
                 sellPint={this.handleSellingABeer}
                 beerList={this.state.masterKegList}
+                onEditingBeer={this.handleEditingABeer}
               />
             )}
           />
@@ -127,6 +161,7 @@ class App extends React.Component {
           />
           <Route component={Error404} />
         </Switch>
+        {this.editFormView}
       </div>
     );
   }

@@ -7,6 +7,9 @@ function Beer(props) {
   function handleDeletingBeer() {
     props.onDeletingBeer(props.index);
   }
+  function handleEditingBeer() {
+    props.onEditingBeer(props.index);
+  }
   return (
     <tr class="row">
       <style jsx>{`
@@ -34,6 +37,7 @@ function Beer(props) {
         <button className="btn btn-info" onClick={handleDeletingBeer}>
           Delete
         </button>
+        <button onClick={handleEditingBeer}>Edit</button>
       </td>
     </tr>
   );

@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import Beer from "./Beer";
 
 function BeerList(props) {
-  console.log(props.beerList);
-
   return (
     <div>
       <style jsx>{`
@@ -52,6 +50,7 @@ function BeerList(props) {
                   index={index}
                   onSellingBeer={props.sellPint}
                   onDeletingBeer={props.deleteBeer}
+                  onEditingBeer={props.onEditingBeer}
                 />
               ))}
           </tbody>
