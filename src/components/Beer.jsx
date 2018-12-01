@@ -34,10 +34,12 @@ function Beer(props) {
         <button className="btn btn-success" onClick={handleSellingBeer}>
           Sell Pint
         </button>
-        <button className="btn btn-info" onClick={handleDeletingBeer}>
+        <button className="btn btn-warning" onClick={handleDeletingBeer}>
           Delete
         </button>
-        <button onClick={handleEditingBeer}>Edit</button>
+        <button className="btn btn-info" onClick={handleEditingBeer}>
+          Edit
+        </button>
       </td>
     </tr>
   );
